@@ -32,49 +32,49 @@
         Output image file name. Supported formats: PNG, BMP, GIF, JPEG, TIFF
 
 ## OPTIONS:
-    __-c:l,t,r,b__
-        Crop image by (l)eft, (t)op, (r)ight and (b)ottom margin (integer)
-        pixels;
+   __-c:l,t,r,b__
+    Crop image by (l)eft, (t)op, (r)ight and (b)ottom margin (integer)
+    pixels;
 
-    __-d:float__
-        Rotate for <float> degrees;
+   __-d:float__
+    Rotate for <float> degrees;
 
-    __-s:float__
-        Scale for <float> factor;
+   __-s:float__
+    Scale for <float> factor;
 
-    __-g:float__
-        Gaussian blur filter of <float> amount;
+   __-g:float__
+    Gaussian blur filter of <float> amount;
 
-    __-n:float__
-        Noise of <float> amount;
+   __-n:float__
+    Noise of <float> amount;
 
-    __-t:float__
-        Contrast of <float> level;
+   __-t:float__
+    Contrast of <float> level;
 
-    __-p:integer__
-        Post level;
+   __-p:integer__
+    Post level;
 
-    __-w:file__
-        Water mark from file;
+   __-w:file__
+    Water mark from file;
 
-    __-f:chars__
-        Flip image (v)ertical or (h)orisontal, or 'vh' or 'hv';
+   __-f:chars__
+    Flip image (v)ertical or (h)orisontal, or 'vh' or 'hv';
 
-    __-r:string__
-        Color transformation, possible values are: gray, noalpha, red,
-        channel0, green, channel1, blue, channel2, alpha, rgb, addalpha;
+   __-r:string__
+    Color transformation, possible values are: gray, noalpha, red,
+    channel0, green, channel1, blue, channel2, alpha, rgb, addalpha;
 
-    __-x:chars__
-        Swap any two color channels: 'r','g' or 'b'. Exactly two chars
-        allowed;
+   __-x:chars__
+    Swap any two color channels: 'r','g' or 'b'. Exactly two chars
+    allowed;
 
-    __-a__  Autolevels;
+   __-a__  Autolevels;
 
-    __-v__  Verbose;
+   __-v__  Verbose;
 
-    __-help__
-        Display help screen of usage. Also display one if required parameter
-        missing.
+   __-help__
+    Display help screen of usage. Also display one if required parameter
+    missing.
 
 # AUTHOR
     An0ther0ne
