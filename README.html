@@ -1,159 +1,142 @@
-<?xml version="1.0" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title></title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rev="made" href="mailto:" />
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="generator" content="Pod::HtmlEasy/v1.1.11 Pod::Parser/1.61 Perl/5.018002 [MSWin32]">
+<title>
+B<imgconv.pl> - simple command-line image-convertation tool.
+</title>
+<style type="text/css"> <!--/* Properties that apply to the entire HTML file produced */
+BODY {
+    background: white;
+    color: black;
+    font-family: arial,sans-serif;
+    margin: 0;
+    padding: 1ex;
+}
+/* The links; no change once visited */
+A:link, A:visited {
+    background: transparent;
+    color: #006699;
+}
+/* Applies to <div> contents; that's most everything
+DIV {
+    border-width: 0;
+}
+/* <pre> is used for verbatum POD */
+.pod PRE     {
+    background: #eeeeee;
+    border: 1px solid #888888;
+    color: black;
+    padding: 1em;
+    white-space: pre;
+}
+/* This is the style of the header/footer of the POD pages */
+.HF     {
+    background: #eeeeee;
+    border: 1px solid #888888;
+    color: black;
+    margin: 1ex 0;
+    padding: 0.5ex 1ex;
+}
+/* <h1> result from processing =head1, and are generated only in class="pod" */
+.pod H1      {
+    background: transparent;
+    color: #006699;
+    font-size: large;
+}
+/* Ditto <h1> */
+.pod H2, H3, H4      {
+    background: transparent;
+    color: #006699;
+    font-size: medium;
+}
+/* Applies to all <a ... generated */
+.pod .toc A  {
+    text-decoration: none;
+}
+/* <li> items in the class="toc"; the table of contents, aka "index" */
+/* <li> in class="pod" -- the actual POD -- default to browser defaults */
+.toc li {
+    line-height: 1.2em;
+    list-style-type: none;
+}
+
+--></style>
 </head>
-
-<body>
-
-
-
-<ul id="index">
-  <li><a href="#NAME">NAME</a></li>
-  <li><a href="#SYNOPSIS">SYNOPSIS:</a></li>
-  <li><a href="#DESCRIPTION">DESCRIPTION:</a>
-    <ul>
-      <li><a href="#INPUT-PARAMS">INPUT PARAMS:</a>
-        <ul>
-          <li><a href="#inimage">inimage</a></li>
-          <li><a href="#outimage">outimage</a></li>
-        </ul>
-      </li>
-      <li><a href="#OPTIONS">OPTIONS:</a>
-        <ul>
-          <li><a href="#c:l-t-r-b">-c:l,t,r,b</a></li>
-          <li><a href="#d:float">-d:float</a></li>
-          <li><a href="#s:float">-s:float</a></li>
-          <li><a href="#g:float">-g:float</a></li>
-          <li><a href="#n:float">-n:float</a></li>
-          <li><a href="#t:float">-t:float</a></li>
-          <li><a href="#p:integer">-p:integer</a></li>
-          <li><a href="#w:file">-w:file</a></li>
-          <li><a href="#f:chars">-f:chars</a></li>
-          <li><a href="#r:string">-r:string</a></li>
-          <li><a href="#x:chars">-x:chars</a></li>
-          <li><a href="#a">-a</a></li>
-          <li><a href="#v">-v</a></li>
-          <li><a href="#help">-help</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li><a href="#AUTHOR">AUTHOR</a></li>
-  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
-  <li><a href="#LICENSE">LICENSE</a></li>
+<body  alink="#FF0000" bgcolor="#FFFFFF" link="#000000" text="#000000" vlink="#000066">
+<div class="toc">
+<ul>
+<li><a href='#NAME'>NAME</a></li>
+<li><a href='#SYNOPSIS:'>SYNOPSIS:</a></li>
+<li><a href='#DESCRIPTION:'>DESCRIPTION:</a></li>
+<ul>
+<li><a href='#INPUT PARAMS:'>INPUT PARAMS:</a></li>
+<li><a href='#OPTIONS:'>OPTIONS:</a></li>
 </ul>
-
-<h1 id="NAME">NAME</h1>
-
-<p><b>imgconv.pl</b></p>
-
-<h1 id="SYNOPSIS">SYNOPSIS:</h1>
-
-<p><b>imgconv.pl</b> <b>&lt;inimage</b>&gt; <b>&lt;outimage</b>&gt; <b><span style="white-space: nowrap;">[-c:l,t[,r[,b]]] [-s:float] [-g:float] [-n:float] [-w:file] [-a] [-v]</span></b></p>
-
-<p>Options applied one by one in order as listed in command line. One kind of option may be applied for many times.</p>
-
-<p><b>For example:</b></p>
-
-<p><code><b>imgconv.pl perl.png out15.jpeg -d:15 -d:10 -f:h -v</b></code></p>
-
+<li><a href='#AUTHOR'>AUTHOR</a></li>
+<li><a href='#SEE ALSO'>SEE ALSO</a></li>
+<li><a href='#LICENSE'>LICENSE</a></li>
+</ul>
+</div>
+<div class='pod'>
+<a name='NAME'></a><h1>NAME</h1>
+<p><b>imgconv.pl</b> - simple command-line image-convertation tool.</p>
+<a name='SYNOPSIS:'></a><h1>SYNOPSIS:</h1>
+<pre>  imgconv.pl inimage outimage [-c:l,t[,r[,b]]] [-d:float] [-s:float] \
+    [-g:float] [-n:float] [-t:float] [-p:integer] [-w:file] [-f:chars] \
+    [-r:string] [-x:chars] [-a] [-v] [[-]-help]</pre>
+<p>Options applied one by one in order as listed in command line. One kind of option may be applied for many times.
+For example:</p>
+<pre>  imgconv.pl perl.png out15.jpeg -d:15 -d:10 -f:h -v</pre>
 <p>Result of this operations (output with verbose flag):</p>
-
-<p><code>Rotated by: 15 degrees.</code> &lt;Rotated by: 10 degrees.&gt; &lt;Flip image horisontal&gt;</p>
-
-<h1 id="DESCRIPTION">DESCRIPTION:</h1>
-
+<pre>  Rotated by: 15 degrees.
+  Rotated by: 10 degrees.
+  Flip image horisontal</pre>
+<a name='DESCRIPTION:'></a><h1>DESCRIPTION:</h1>
 <p><b>imgconv.pl</b> is a simple command line tool to convert image for various purpose, e.g. batch-processing of crop, resise, flip, blur, contrast, post levels, add noise, swap color channels or extract anyone, convert to another format and so on. Written with <b>Perl</b> and uses builtin <b>Imager</b> extension.</p>
-
-<h2 id="INPUT-PARAMS">INPUT PARAMS:</h2>
-
-<h3 id="inimage">inimage</h3>
-
+<a name='INPUT PARAMS:'></a><h2>INPUT PARAMS:</h2>
+<ul>
+<li><a name='inimage'></a><b>inimage</b></li>
 <p>Input image file name. Supported formats: PNG, BMP, GIF, JPG, TIFF</p>
-
-<h3 id="outimage">outimage</h3>
-
+<li><a name='outimage'></a><b>outimage</b></li>
 <p>Output image file name. Supported formats: PNG, BMP, GIF, JPEG, TIFF</p>
-
-<h2 id="OPTIONS">OPTIONS:</h2>
-
-<h3 id="c:l-t-r-b">-c:l,t,r,b</h3>
-
+</ul>
+<a name='OPTIONS:'></a><h2>OPTIONS:</h2>
+<ul>
+<li><a name='-c:l,t,r,b'></a><b>-c:l,t,r,b</b></li>
 <p>Crop image by (<b>l</b>)eft, (<b>t</b>)op, (<b>r</b>)ight and (<b>b</b>)ottom margin (integer) pixels;</p>
-
-<h3 id="d:float">-d:float</h3>
-
+<li><a name='-d:float'></a><b>-d:float</b></li>
 <p>Rotate for &lt;float&gt; degrees;</p>
-
-<h3 id="s:float">-s:float</h3>
-
+<li><a name='-s:float'></a><b>-s:float</b></li>
 <p>Scale for &lt;float&gt; factor;</p>
-
-<h3 id="g:float">-g:float</h3>
-
+<li><a name='-g:float'></a><b>-g:float</b></li>
 <p>Gaussian blur filter of &lt;float&gt; amount;</p>
-
-<h3 id="n:float">-n:float</h3>
-
+<li><a name='-n:float'></a><b>-n:float</b></li>
 <p>Noise of &lt;float&gt; amount;</p>
-
-<h3 id="t:float">-t:float</h3>
-
+<li><a name='-t:float'></a><b>-t:float</b></li>
 <p>Contrast of &lt;float&gt; level;</p>
-
-<h3 id="p:integer">-p:integer</h3>
-
+<li><a name='-p:integer'></a><b>-p:integer</b></li>
 <p>Post level;</p>
-
-<h3 id="w:file">-w:file</h3>
-
+<li><a name='-w:file'></a><b>-w:file</b></li>
 <p>Water mark from file;</p>
-
-<h3 id="f:chars">-f:chars</h3>
-
-<p>Flip image (<b>v</b>)ertical or (<b>h</b>)orisontal, or &#39;<b>vh</b>&#39; or &#39;<b>hv</b>&#39;;</p>
-
-<h3 id="r:string">-r:string</h3>
-
+<li><a name='-f:chars'></a><b>-f:chars</b></li>
+<p>Flip image (<b>v</b>)ertical or (<b>h</b>)orisontal, or '<b>vh</b>' or '<b>hv</b>';</p>
+<li><a name='-r:string'></a><b>-r:string</b></li>
 <p>Color transformation, possible values are: <b>gray, noalpha, red, channel0, green, channel1, blue, channel2, alpha, rgb, addalpha</b>;</p>
-
-<h3 id="x:chars">-x:chars</h3>
-
-<p>Swap any two color channels: &#39;<b>r</b>&#39;,&#39;<b>g</b>&#39; or &#39;<b>b</b>&#39;. Exactly two chars allowed;</p>
-
-<h3 id="a">-a</h3>
-
+<li><a name='-x:chars'></a><b>-x:chars</b></li>
+<p>Swap any two color channels: '<b>r</b>','<b>g</b>' or '<b>b</b>'. Exactly two chars allowed;</p>
+<li><a name='-a'></a><b>-a</b></li>
 <p>Autolevels;</p>
-
-<h3 id="v">-v</h3>
-
+<li><a name='-v'></a><b>-v</b></li>
 <p>Verbose;</p>
-
-<h3 id="help">-help</h3>
-
+<li><a name='-help'></a><b>-help</b></li>
 <p>Display help screen of usage. Also display one if required parameter missing.</p>
-
-<h1 id="AUTHOR">AUTHOR</h1>
-
+</ul>
+<a name='AUTHOR'></a><h1>AUTHOR</h1>
 <p>An0ther0ne</p>
-
-<h1 id="SEE-ALSO">SEE ALSO</h1>
-
-<p><a href="https://metacpan.org/pod/Imager">Imager</a>, <a href="http://www.perl.org/">Perl</a>,</p>
-
-<p><a href="http://imager.perl.org/">http://imager.perl.org/</a></p>
-
-<h1 id="LICENSE">LICENSE</h1>
-
+<a name='SEE ALSO'></a><h1>SEE ALSO</h1>
+<p><a href='https://metacpan.org/pod/Imager,' target='_blank'>metacpan.org</a> <a href='http://www.perl.org/,' target='_blank'>www.perl.org</a></p>
+<p><a href='http://imager.perl.org/' target='_blank'>imager.perl.org</a></p>
+<a name='LICENSE'></a><h1>LICENSE</h1>
 <p>GNU General Public License v3.0</p>
-
-
-</body>
-
-</html>
-
-
+</div></body></html>

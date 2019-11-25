@@ -153,23 +153,24 @@ __END__
 
 =head1 NAME
 
-B<imgconv.pl>
+B<imgconv.pl> - simple command-line image-convertation tool.
 
 =head1 SYNOPSIS:
 
-B<imgconv.pl> B<<inimage>> B<<outimage>> B<S<[-c:l,t[,r[,b]]] [-s:float] [-g:float] [-n:float] [-w:file] [-a] [-v]>>
+  imgconv.pl inimage outimage [-c:l,t[,r[,b]]] [-d:float] [-s:float] \
+    [-g:float] [-n:float] [-t:float] [-p:integer] [-w:file] [-f:chars] \
+    [-r:string] [-x:chars] [-a] [-v] [[-]-help]
 
 Options applied one by one in order as listed in command line. One kind of option may be applied for many times.
+For example:
 
-B<For example:>
-
-C<B<imgconv.pl perl.png out15.jpeg -d:15 -d:10 -f:h -v>>
+  imgconv.pl perl.png out15.jpeg -d:15 -d:10 -f:h -v
 
 Result of this operations (output with verbose flag):
 
-C<Rotated by: 15 degrees.>
-<Rotated by: 10 degrees.>
-<Flip image horisontal>
+  Rotated by: 15 degrees.
+  Rotated by: 10 degrees.
+  Flip image horisontal
 
 =head1 DESCRIPTION:
 
@@ -177,71 +178,79 @@ B<imgconv.pl> is a simple command line tool to convert image for various purpose
 
 =head2 INPUT PARAMS:
 
-=head3 inimage
+=over
+
+=item B<inimage>
 
 Input image file name. Supported formats: PNG, BMP, GIF, JPG, TIFF
 
-=head3 outimage
+=item B<outimage>
 
 Output image file name. Supported formats: PNG, BMP, GIF, JPEG, TIFF
 
+=back
+
 =head2 OPTIONS:
 
-=head3 -c:l,t,r,b
+=over
+
+=item B<-c:l,t,r,b>
 
 Crop image by (B<l>)eft, (B<t>)op, (B<r>)ight and (B<b>)ottom margin (integer) pixels;
 
-=head3 -d:float
+=item B<-d:float>
 
 Rotate for <float> degrees;
 
-=head3 -s:float
+=item B<-s:float>
 
 Scale for <float> factor;
 
-=head3 -g:float
+=item B<-g:float>
 
 Gaussian blur filter of <float> amount;
 
-=head3 -n:float
+=item B<-n:float>
 
 Noise of <float> amount;
 
-=head3 -t:float
+=item B<-t:float>
 
 Contrast of <float> level;
 
-=head3 -p:integer
+=item B<-p:integer>
 
 Post level;
 
-=head3 -w:file
+=item B<-w:file>
 
 Water mark from file;
 
-=head3 -f:chars
+=item B<-f:chars>
 
 Flip image (B<v>)ertical or (B<h>)orisontal, or 'B<vh>' or 'B<hv>';
 
-=head3 -r:string
+=item B<-r:string>
 
 Color transformation, possible values are: B<gray, noalpha, red, channel0, green, channel1, blue, channel2, alpha, rgb, addalpha>;
 
-=head3 -x:chars
+=item B<-x:chars>
 
 Swap any two color channels: 'B<r>','B<g>' or 'B<b>'. Exactly two chars allowed;
 
-=head3 -a
+=item B<-a>
 
 Autolevels;
 
-=head3 -v
+=item B<-v>
 
 Verbose;
 
-=head3 -help
+=item B<-help>
 
 Display help screen of usage. Also display one if required parameter missing.
+
+=back
 
 =head1 AUTHOR
 
