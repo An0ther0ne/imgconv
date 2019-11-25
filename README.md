@@ -77,7 +77,7 @@
     missing.
 
 # AUTHOR
-    An0ther0ne
+   An0ther0ne
 
 # SEE ALSO
 * [Imager](https://metacpan.org/pod/Imager)
