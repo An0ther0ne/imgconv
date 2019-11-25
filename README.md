@@ -85,4 +85,4 @@
 * http://imager.perl.org/
 
 # LICENSE
-    GNU General Public License v3.0
+   GNU General Public License v3.0
