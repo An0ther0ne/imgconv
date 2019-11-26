@@ -1,7 +1,7 @@
-# NAME
+## NAME
     imgconv.pl - simple command-line image-convertation tool.
 
-# SYNOPSIS:
+## SYNOPSIS:
       imgconv.pl inimage outimage [-c:l,t[,r[,b]]] [-d:float] [-s:float] \
         [-g:float] [-n:float] [-t:float] [-p:integer] [-w:file] [-f:chars] \
         [-r:string] [-x:chars] [-a] [-v] [[-]-help]
@@ -16,15 +16,15 @@ Result of this operations (output with verbose flag):
       Rotated by: 10 degrees.
       Flip image horisontal
 
-# DESCRIPTION:
+## DESCRIPTION:
 imgconv.pl is a simple command line tool to convert image for various purpose, e.g. batch-processing of crop, resise, flip, blur, contrast, post levels, add noise, swap color channels or extract anyone, convert to another format and so on. Written with Perl and uses builtin Imager extension.
 
-## INPUT PARAMS:
+### INPUT PARAMS:
 * __inimage__ - Input image file name. Supported formats: PNG, BMP, GIF, JPG, TIFF
 
 * __outimage__ - Output image file name. Supported formats: PNG, BMP, GIF, JPEG, TIFF
 
-## OPTIONS:
+### OPTIONS:
    __-c:l,t,r,b__
     Crop image by (l)eft, (t)op, (r)ight and (b)ottom margin (integer)
     pixels;
@@ -69,13 +69,13 @@ imgconv.pl is a simple command line tool to convert image for various purpose, e
     Display help screen of usage. Also display one if required parameter
     missing.
 
-# AUTHOR
+## AUTHOR
    An0ther0ne
 
-# SEE ALSO
+## SEE ALSO
 * [Imager](https://metacpan.org/pod/Imager)
 * [Perl](http://www.perl.org/)
 * http://imager.perl.org/
 
-# LICENSE
+## LICENSE
    GNU General Public License v3.0
