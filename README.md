@@ -6,16 +6,15 @@
         [-g:float] [-n:float] [-t:float] [-p:integer] [-w:file] [-f:chars] \
         [-r:string] [-x:chars] [-a] [-v] [[-]-help]
 
-    Options applied one by one in order as listed in command line. One kind
-    of option may be applied for many times. For example:
+Options applied one by one in order as listed in command line. One kind of option may be applied for many times. For example:
 
-      "imgconv.pl perl.png out15.jpeg -d:15 -d:10 -f:h -v""
+      imgconv.pl perl.png out15.jpeg -d:15 -d:10 -f:h -v
 
-    Result of this operations (output with verbose flag):
+Result of this operations (output with verbose flag):
 
-      "Rotated by: 15 degrees.
+      Rotated by: 15 degrees.
       Rotated by: 10 degrees.
-      Flip image horisontal"
+      Flip image horisontal
 
 # DESCRIPTION:
 imgconv.pl is a simple command line tool to convert image for various purpose, e.g. batch-processing of crop, resise, flip, blur, contrast, post levels, add noise, swap color channels or extract anyone, convert to another format and so on. Written with Perl and uses builtin Imager extension.
