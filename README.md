@@ -12,9 +12,9 @@ Options applied one by one in order as listed in command line. One kind of optio
 
 Result of this operations (output with verbose flag):
 
-      Rotated by: 15 degrees.
-      Rotated by: 10 degrees.
-      Flip image horisontal
+      1) Rotated by: 15 degrees.
+      2) Rotated by: 10 degrees.
+      3) Flip image horisontal
 
 ## DESCRIPTION:
 imgconv.pl is a simple command line tool to convert image for various purpose, e.g. batch-processing of crop, resise, flip, blur, contrast, post levels, add noise, swap color channels or extract anyone, convert to another format and so on. Written with Perl and uses builtin Imager extension.
