@@ -17,7 +17,7 @@ Result of this operations (output with verbose flag):
       3) Flip image horisontal
 
 ## DESCRIPTION:
-imgconv.pl is a simple command line tool to convert image for various purpose, e.g. batch-processing of crop, resise, flip, blur, contrast, post levels, add noise, swap color channels or extract anyone, convert to another format and so on. Written with Perl and uses builtin Imager extension.
+__imgconv.pl__ is a simple command line tool to convert image for various purpose, e.g. batch-processing of crop, resise, flip, blur, contrast, post levels, add noise, swap color channels or extract anyone, convert to another format and so on. Written with Perl and uses builtin Imager extension.
 
 ### INPUT PARAMS:
 * __inimage__ - Input image file name. Supported formats: PNG, BMP, GIF, JPG, TIFF
