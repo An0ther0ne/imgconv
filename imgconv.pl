@@ -65,7 +65,7 @@ my $outformat = $1 if $outfile=~m|\.([^\.]+?)$|g;
 die "Output image type \'$outformat\' is not supported\n" unless ($Imager::formats{$outformat});
 
 my $inimage = Imager->new(file=>$infile) 
-	or die "Can't open image file: ".$inimage->errstr."\n";
+	or die "Can't open image file:".Imager->errstr."\n";
 
 my $imwidth   = $inimage->getwidth();
 my $imgheight = $inimage->getheight();
@@ -76,7 +76,7 @@ foreach $i (reverse sort keys %options){
 	my ($key,$val) = split(/\t/,$options{$i});
 	if ($key eq '-s'){
 		$outimage = $outimage->scale(scalefactor=>$val) 
-			or die "Can't scale image by \'".$val."\' factor: ".$outimage->errstr."\n";
+			or die "Can't scale image by \'".$val."\' factor: ".Imager->errstr."\n";
 		print "Scaled by: ".(($val-1)*100)."%\n" if $verbose;
 	}elsif ($key eq '-d'){
 		$outimage = $outimage->rotate(degrees=>$val);
@@ -145,7 +145,7 @@ foreach $i (reverse sort keys %options){
 }
 
 $outimage->write(file=>$outfile) 
-	or die "Can't create image file: ".$outimage->errstr."\n";
+	or die "Can't create image file: ".Imager->errstr."\n";
  
 exit;
 
