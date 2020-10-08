@@ -1,5 +1,5 @@
 # Copyright (c) by An0ther0ne 2019
-# Github imgconv progect
+# Github imgconv project
 use Imager;
 
 my $progname = $0;
